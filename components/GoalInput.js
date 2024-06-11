@@ -12,30 +12,45 @@ const GoalInput = (props) => {
         setInputGoal('');
     }
     return (
-    <Modal visible={props.visible} animationType='slide' style={{flex:2}}>
+    <Modal visible={props.visible} animationType='slide' style={styles.modal}>
+    <View style={{flex:1,padding:30, alignItems:'center'}}>
         <View style={styles.inputContainer}>
             <TextInput value={inputGoal} style={styles.input} onChangeText={goalInputHandler} placeholder='What is your goal' />
             <View style={styles.buttonContainer}>
-                <Button onPress={addGoal} title='Add Goal' />
-                <Button onPress={props.onCancel} title='Cancel' />
+                <Button color={'#E7F1F2'} onPress={addGoal} title='Add Goal' />
+                <Button color={'#E7F1F2'} onPress={props.onCancel} title='Cancel' />
             </View>
         </View>
+
+        <View style={{borderBottomWidth:3,borderLeftWidth:3,borderColor:'#B4D5DA',width:100,height:50,backgroundColor:'white',position:'absolute', top:220, left:40, borderRadius:100}}></View>
+        <View style={{borderBottomWidth:3,borderLeftWidth:3,borderColor:'#B4D5DA',width:50,height:100,backgroundColor:'white',position:'absolute', top:220, right:30, borderRadius:100}}></View>
+        <View style={{width:200,height:200,backgroundColor:'white',position:'absolute', bottom:120, right:-60, borderRadius:100}}></View>
+
+    </View>
     </Modal>
     );
 }
 
 const styles = StyleSheet.create({
     inputContainer:{
-    flex:1,
+    width:'100%',
+    height:450,
+    borderRadius:22,
+    backgroundColor:'teal',
+    margin:'auto',
     justifyContent:'center',
     alignItems:'center',
     gap:12,
     paddingHorizontal:30,
+    borderColor:'#B4D5DA',
+    borderWidth:3,
   },
   input:{
     width:'100%',
+    fontSize:20,
+    color:'#B4D5DA',
     borderBottomWidth:2,
-    borderBottomColor:'#cccc',
+    borderBottomColor:'#E7F1F2',
   },
   buttonContainer:{
     flexDirection:'row',

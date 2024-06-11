@@ -15,8 +15,8 @@ const GoalItem = ({itemData,deleteItem})=>(
 const GoalList = (props) => {
     return (
     <View style={styles.listContainer}>
-        <View>
-            <Button title='Add Goal' onPress={props.switchAddGoal} />
+        <View style={styles.buttonContainer}>
+            <Button color={'white'} title='Add Goal' onPress={props.switchAddGoal} />
         </View>
         <Text style={styles.listHeading}>List of Goals</Text>
         <FlatList
@@ -37,15 +37,16 @@ const styles = StyleSheet.create({
     listContainer:{
     flex:6,
     width:'100%',
-    alignItems:'flex-start',
+    alignItems:'center',
     justifyContent:'flex-start',
     paddingHorizontal:30,
     gap:12,
   },
   listHeading:{
-    fontSize: 20,
+    fontSize: 30,
     color:'teal',
-    fontWeight:'800'
+    fontWeight:'800',
+    textAlign:'center',
   },
   listItems:{
     color:'white',
@@ -53,9 +54,23 @@ const styles = StyleSheet.create({
     paddingHorizontal:12,
   },
   listItemContainer:{
-    borderRadius:20,
+    borderRadius:12,
     backgroundColor:'teal',
-    // alignSelf:'flex-start',
+    paddingHorizontal:16,
+    paddingVertical:8,
+    borderBottomWidth:4,
+    borderRightWidth:4,
+    borderColor:"#87BBC2",
+    margin:8
+  },
+  buttonContainer:{
+    width:'100%',
+    backgroundColor:'teal',
+    borderColor:'#CCCC',
+    borderRadius:12,
+    paddingHorizontal:16,
+    paddingVertical:8,
+    marginHorizontal:'auto',
   },
   pressedItem:{
     opacity: 0.5,
